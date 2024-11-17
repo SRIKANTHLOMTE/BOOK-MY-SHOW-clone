@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MakeMyTrip Website</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/css/splide.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <!-- top-bar -->
+                <div class="top-bar">
+                    <div class="logo-search">
+                        <div class="logo">
+                            <svg
+                                width="115"
+                                height="33.9"
+                                viewBox="0 0 115 33"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_6398_17562)">
+                                    <path
+                                        d="M72.4622 9.6674L70.5729 6.44009L67.1867 8.05374L65.2974 4.82643L61.9112 6.44009L60.0219 3.21278L56.6357 4.82643L54.7464 1.59912L51.3602 3.21278L49.4709 0L46.0847 1.61366L38.9199 24.9317L47.6252 27.5921C48.2065 25.7167 49.965 24.3357 52.0287 24.3357C54.572 24.3357 56.6357 26.4 56.6357 28.9441C56.6357 28.9731 56.6357 29.0022 56.6357 29.0313C56.6502 29.4529 56.6066 29.8744 56.4758 30.2815L65.3265 32.9855L72.4622 9.6674Z"
+                                        fill="#D71920"
+                                    ></path>
+                                    <path
+                                        d="M46.3747 22.9982C45.9242 22.9109 45.6045 22.533 45.6045 22.0678V10.6559C45.6045 10.118 46.026 9.71094 46.5491 9.71094H54.7894C55.0074 9.71094 55.2254 9.72547 55.4288 9.76909C57.2019 10.0889 58.4953 11.6153 58.4953 13.418V22.0823C58.4953 22.344 58.3936 22.5766 58.2047 22.7656C58.0303 22.94 57.7832 23.0418 57.5361 23.0418C57.478 23.0418 57.4199 23.0418 57.3617 23.0272C56.9112 22.94 56.5915 22.562 56.5915 22.0968V13.4034C56.5915 12.5312 55.9666 11.7898 55.0946 11.6299C54.9928 11.6153 54.8911 11.6008 54.7894 11.6008H52.9873V22.0678C52.9873 22.3294 52.8856 22.562 52.6966 22.751C52.5222 22.9255 52.2752 23.0272 52.0281 23.0272C51.97 23.0272 51.9118 23.0272 51.8537 23.0127C51.4032 22.9255 51.0835 22.5475 51.0835 22.0823V11.6153H47.4793V22.0823C47.4793 22.344 47.3775 22.5766 47.1886 22.7656C47.0142 22.94 46.7671 23.0418 46.5201 23.0418C46.491 23.0127 46.4329 23.0127 46.3747 22.9982Z"
+                                        fill="white"
+                                    ></path>
+                                    <path
+                                        d="M60.0945 27.9846C59.6439 27.912 59.3242 27.5194 59.3242 27.0542C59.3242 26.7926 59.4259 26.56 59.6003 26.3855C59.7747 26.2111 60.0218 26.1093 60.2834 26.1093C61.0827 26.1093 61.7803 25.586 62.0128 24.83L62.9865 21.5591L59.7747 10.845C59.6149 10.3362 59.9055 9.7983 60.4142 9.65292C60.5595 9.60931 60.6903 9.60931 60.8357 9.63839C61.1844 9.69654 61.4751 9.94367 61.5914 10.278L63.9748 18.2736L66.3873 10.278C66.5035 9.82737 66.9831 9.53662 67.4918 9.62385L67.5645 9.63839C68.0731 9.7983 68.3638 10.3362 68.2039 10.845L64.9049 21.8498L63.8585 25.3679C63.5969 26.182 63.1319 26.8362 62.5215 27.2723C61.8675 27.752 61.0972 28.0137 60.2979 28.0137C60.2107 27.9992 60.1526 27.9846 60.0945 27.9846Z"
+                                        fill="white"
+                                    ></path>
+                                    <path
+                                        d="M0.799318 22.882C0.319727 22.7948 0 22.4023 0 21.908V4.87014C0 4.59393 0.101731 4.34679 0.290661 4.17234C0.479591 3.98335 0.726652 3.88159 0.988247 3.88159C1.04638 3.88159 1.10451 3.88159 1.16264 3.89613C1.64223 3.98335 1.97649 4.3904 1.97649 4.87014V9.7111H3.85126C4.06925 9.7111 4.30178 9.72564 4.51978 9.76925C6.36547 10.0891 7.70251 11.6882 7.70251 13.5635V19.0587C7.70251 21.1811 5.97308 22.9111 3.85126 22.9111H0.988247C0.930115 22.8966 0.85745 22.8966 0.799318 22.882ZM1.97649 20.9195H3.85126C4.8831 20.9195 5.72602 20.0763 5.72602 19.0441V13.5635C5.72602 12.6477 5.07203 11.8772 4.17098 11.7173C4.06925 11.7027 3.95299 11.6882 3.85126 11.6882H1.97649V20.9195Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M13.3996 22.9545C11.5685 22.6347 10.2314 21.0356 10.2314 19.1602V13.447C10.2314 12.4149 10.6238 11.4554 11.3505 10.7285C12.0771 10.0016 13.0363 9.60913 14.0682 9.60913C14.2862 9.60913 14.5187 9.62367 14.7367 9.66728C16.5824 9.9871 17.9194 11.5862 17.9194 13.4616V19.1748C17.9194 20.2069 17.5125 21.1664 16.7858 21.8933C16.0592 22.6201 15.1 23.0127 14.0682 23.0127C13.8502 23.0127 13.6176 22.9981 13.3996 22.9545ZM14.3879 11.6008C14.2862 11.5862 14.1699 11.5717 14.0682 11.5717C13.0218 11.5717 12.1934 12.4003 12.1934 13.447V19.1602C12.1934 20.0761 12.8329 20.8466 13.7339 21.0065C13.8356 21.021 13.9519 21.0356 14.0682 21.0356C15.1 21.0356 15.9429 20.1924 15.9429 19.1602V13.447C15.9429 12.5312 15.2889 11.7607 14.3879 11.6008Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M23.6164 22.9546C21.7853 22.6348 20.4482 21.0357 20.4482 19.1604V13.4472C20.4482 11.3247 22.1777 9.59473 24.2995 9.59473C24.5175 9.59473 24.75 9.60926 24.968 9.65288C26.8137 9.9727 28.1508 11.5718 28.1508 13.4472V19.1604C28.1508 20.1925 27.7438 21.152 27.0172 21.8789C26.2905 22.6057 25.3313 22.9983 24.2995 22.9983C24.067 23.0128 23.8344 22.9983 23.6164 22.9546ZM24.6192 11.6009C24.5175 11.5864 24.4012 11.5718 24.2995 11.5718C23.2531 11.5718 22.4247 12.4005 22.4247 13.4472V19.1604C22.4247 20.0762 23.0642 20.8467 23.9652 21.0066C24.067 21.0212 24.1832 21.0357 24.2995 21.0357C24.7936 21.0357 25.2587 20.8467 25.622 20.4978C25.9853 20.1489 26.1743 19.6692 26.1743 19.1749V13.4472C26.1743 12.5313 25.5203 11.7608 24.6192 11.6009Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M31.479 22.9983C30.9994 22.9111 30.6797 22.5186 30.6797 22.0243V4.87014C30.6797 4.59393 30.7814 4.34679 30.9703 4.17234C31.1593 3.98335 31.4063 3.88159 31.6679 3.88159C31.7261 3.88159 31.7842 3.88159 31.8423 3.89613C32.3219 3.98335 32.6562 4.3904 32.6562 4.87014V15.0318L37.205 9.94371C37.4376 9.69657 37.7718 9.58027 38.1206 9.63842C38.3095 9.6675 38.4694 9.75472 38.6147 9.87102C39.0217 10.249 39.0507 10.8596 38.6874 11.2666L35.2576 15.09L38.8182 21.5882C38.949 21.8063 38.9781 22.0679 38.9054 22.3151C38.8327 22.5622 38.6583 22.7803 38.4258 22.8966C38.2369 23.0129 38.0043 23.042 37.7718 23.0129C37.4812 22.9547 37.2196 22.7948 37.0888 22.5477L33.8915 16.6746L32.6707 18.012V22.0534C32.6707 22.3151 32.569 22.5768 32.3801 22.7657C32.1911 22.9547 31.9441 23.042 31.6825 23.042C31.5953 23.0129 31.5371 23.0129 31.479 22.9983Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M75.0491 22.9836C73.9446 22.7946 73.0435 22.155 72.4767 21.1809C72.3459 20.9629 72.3168 20.6867 72.3895 20.425C72.4622 20.1633 72.622 19.9598 72.84 19.829C73.029 19.7127 73.276 19.6836 73.5086 19.7127C73.7992 19.7708 74.0608 19.9307 74.1916 20.1924C74.4532 20.6285 74.8601 20.9193 75.3688 21.0065C75.921 21.0937 76.4152 20.9483 76.8366 20.5849C77.2145 20.236 77.4179 19.7272 77.3598 19.2329C77.3307 18.7096 77.0837 18.2589 76.6477 17.9536L73.9881 16.0638C73.1162 15.4532 72.5639 14.4792 72.4767 13.3889C72.4186 12.284 72.84 11.2373 73.6394 10.5395C74.4241 9.81267 75.4996 9.47831 76.575 9.62368C77.6941 9.82721 78.6097 10.4523 79.1328 11.3827C79.2636 11.6008 79.2927 11.877 79.22 12.1241C79.1474 12.3858 78.9875 12.6039 78.7695 12.7202C78.5806 12.8365 78.3335 12.8655 78.1155 12.8365C77.8249 12.7783 77.5633 12.6184 77.4325 12.3567C77.2145 11.9642 76.793 11.688 76.3134 11.6008C75.8048 11.5135 75.3397 11.6589 74.9764 11.9933C74.6421 12.3131 74.4532 12.7783 74.4823 13.258C74.5113 13.7232 74.7729 14.1739 75.1653 14.4501L77.8249 16.3109C78.7405 16.9651 79.3072 17.9827 79.3654 19.1021C79.4526 20.2215 79.0166 21.2827 78.1737 22.0387C77.3744 22.7946 76.2698 23.129 75.1508 22.9836H75.0491Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M82.6928 23.0127C82.2132 22.9255 81.8789 22.5185 81.8789 22.0387V4.88454C81.8789 4.62287 81.9806 4.36119 82.1696 4.17221C82.3585 3.99776 82.6056 3.896 82.8672 3.896C82.9253 3.896 82.9979 3.896 83.0561 3.91053C83.5357 3.99776 83.8554 4.39027 83.8554 4.88454V9.72551H85.7302C85.9627 9.72551 86.1807 9.74005 86.4132 9.78366C88.2444 10.1035 89.5814 11.7026 89.5814 13.5779V22.0387C89.5814 22.5912 89.1454 23.0273 88.5932 23.0273C88.535 23.0273 88.4769 23.0273 88.4188 23.0127C87.9392 22.9255 87.6049 22.5185 87.6049 22.0387V13.5779C87.6049 12.6621 86.9655 11.8916 86.0644 11.7317C85.9627 11.7171 85.8464 11.7026 85.7302 11.7026H83.8554V22.0387C83.8554 22.5912 83.4194 23.0273 82.8672 23.0273C82.809 23.0273 82.7509 23.0273 82.6928 23.0127Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M95.2639 22.969C93.4327 22.6492 92.0957 21.0501 92.0957 19.1748V13.4616C92.0957 11.3391 93.8251 9.60913 95.9469 9.60913C96.1649 9.60913 96.3975 9.62367 96.6155 9.66728C98.4612 9.9871 99.7982 11.5862 99.7982 13.4616V19.1893C99.7982 20.2215 99.3913 21.1809 98.6646 21.9078C97.938 22.6347 96.9788 23.0272 95.9469 23.0272C95.7144 23.0272 95.4819 23.0127 95.2639 22.969ZM96.2667 11.6153C96.1649 11.6008 96.0487 11.5862 95.9469 11.5862C95.4383 11.5862 94.9732 11.7752 94.6244 12.1386C94.2756 12.4875 94.0722 12.9673 94.0722 13.4616V19.1893C94.0722 20.1052 94.7116 20.8757 95.6127 21.0356C95.729 21.0501 95.8307 21.0646 95.9469 21.0646C96.4411 21.0646 96.9061 20.8757 97.2694 20.5268C97.6328 20.1779 97.8217 19.6981 97.8217 19.2038V13.4616C97.8072 12.5457 97.1532 11.7752 96.2667 11.6153Z"
+                                        fill="#333333"
+                                    ></path>
+                                    <path
+                                        d="M114.971 10.8303C115.029 10.5832 115 10.3215 114.869 10.1035C114.738 9.88541 114.506 9.7255 114.229 9.65281C114.171 9.63827 114.113 9.63827 114.055 9.63827C113.604 9.63827 113.212 9.94356 113.096 10.3797C113.081 10.4233 112.02 14.7118 111.192 17.9682L111.177 18.0409L111.163 17.9682C110.349 14.7118 109.274 10.4233 109.259 10.3797C109.172 10.0017 108.881 9.71096 108.503 9.65281C108.445 9.63827 108.387 9.63827 108.329 9.63827C107.893 9.63827 107.515 9.94356 107.384 10.3797C107.37 10.4233 106.309 14.7118 105.48 17.9682L105.466 18.0409L105.451 17.9682C104.638 14.7118 103.562 10.4233 103.548 10.3797C103.46 10.0017 103.155 9.7255 102.777 9.65281C102.647 9.62374 102.516 9.63827 102.385 9.66735C101.862 9.79819 101.542 10.3215 101.673 10.8303L104.536 22.2713C104.638 22.6493 104.943 22.9255 105.306 22.9982C105.35 23.0127 105.408 23.0127 105.466 23.0127C105.931 23.0127 106.309 22.722 106.396 22.2713C106.411 22.2277 107.486 17.9392 108.3 14.6682L108.314 14.5955L108.329 14.6682C109.172 17.9537 110.233 22.2713 110.233 22.2713C110.349 22.6493 110.64 22.9255 111.003 22.9982C111.061 23.0127 111.105 23.0127 111.163 23.0127C111.628 23.0127 112.006 22.7074 112.093 22.2713L114.971 10.8303Z"
+                                        fill="#333333"
+                                    ></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6398_17562">
+                                        <rect
+                                            width="115"
+                                            height="33"
+                                            fill="white"
+                                        ></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="search">
+                            <input
+                                type="text"
+                                placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                            />
+                        </div>
+                    </div>
+                    <div class="signIn-moreOption">
+                        <div class="cities">
+                            <select name="city" class="city">
+                                <option value="delhi" selected>
+                                    Delhi-NCR
+                                </option>
+                                <option value="delhi">Mumbai</option>
+                                <option value="delhi">Bihar</option>
+                                <option value="delhi">Assam</option>
+                            </select>
+                        </div>
+
+                        <button class="signin">Sign in</button>
+                    </div>
+                </div>
+
+                <!-- filters -->
+                <div class="filters">
+                    <div class="filter-content">
+                        <div class="filter-left-content">
+                            <ul>
+                                <li>Movies</li>
+                                <li>Stream</li>
+                                <li>Events</li>
+                                <li>Plays</li>
+                                <li>Sports</li>
+                                <li>Activities</li>
+                            </ul>
+                        </div>
+                        <div class="filter-right-content">
+                            <ul>
+                                <li>ListYourShow</li>
+                                <li>Corporates</li>
+                                <li>Offers</li>
+                                <li>Gift Cards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banners">
+                    <section class="splide" aria-label="Latest Banner">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img
+                                        src="./images/banner1.png"
+                                        alt="Slide 1"
+                                    />
+                                </li>
+                                <li class="splide__slide">
+                                    <img
+                                        src="./images/subBanner.png"
+                                        alt="Slide 2"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </header>
+            <main>
+                <!-- Recommended Movies Section -->
+                <section class="recommended-movies">
+                    <div class="section-header">
+                        <h2>Recommended Movies</h2>
+                        <a href="#" class="see-all">See All &gt;</a>
+                    </div>
+                    <div class="movie-cards">
+                        <!-- Movie Card 1 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/1.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                                <span class="badge">PROMOTED</span>
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 8/10</span> 47.6K Votes
+                            </div>
+                            <h3>Venom: The Last Dance</h3>
+                            <p>Action/Adventure/Sci-Fi</p>
+                        </div>
+
+                        <!-- Movie Card 2 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/2.png"
+                                    alt="Singham Again"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="likes">👍 648.8K Likes</span>
+                            </div>
+                            <h3>Singham Again</h3>
+                            <p>Action/Drama</p>
+                        </div>
+
+                        <!-- Movie Card 3 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/3.png"
+                                    alt="Bhool Bhulaiyaa 3"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="likes">👍 738.6K Likes</span>
+                            </div>
+                            <h3>Bhool Bhulaiyaa 3</h3>
+                            <p>Comedy/Horror</p>
+                        </div>
+
+                        <!-- Movie Card 4 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/4.png"
+                                    alt="Lucky Baskhar"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.5/10</span> 9K Votes
+                            </div>
+                            <h3>Lucky Baskhar</h3>
+                            <p>Crime/Drama/Thriller</p>
+                        </div>
+
+                        <!-- Movie Card 5 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/5.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                        <!-- Movie Card 6 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/6.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                        <!-- Movie Card 7 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/7.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                        <!-- Movie Card 8 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/8.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                        <!-- Movie Card 9 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/9.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                        <!-- Movie Card 10 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/recomMovies/10.png"
+                                    alt="Amaran"
+                                />
+                            </div>
+                            <div class="movie-rating">
+                                <span class="rating">⭐ 9.3/10</span> 25.4K
+                                Votes
+                            </div>
+                            <h3>Amaran</h3>
+                            <p>Action/Drama/Thriller</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- mini-banner -->
+                <section class="mini-banner">
+                    <img src="./images/banner2.png" alt="mini-banner" />
+                </section>
+
+                <!-- Best Events Section -->
+                <section class="best-events">
+                    <h2>The Best Of Live Events</h2>
+                    <div class="images">
+                        <img src="./images/lifeEvent/1.png" alt="1 image" />
+                        <img src="./images/lifeEvent/2.png" alt="2 image" />
+                        <img src="./images/lifeEvent/3.png" alt="3 image" />
+                        <img src="./images/lifeEvent/4.png" alt="4 image" />
+                        <img src="./images/lifeEvent/5.png" alt="5 image" />
+                        <img src="./images/lifeEvent/6.png" alt="6 image" />
+                        <img src="./images/lifeEvent/7.png" alt="7 image" />
+                        <img src="./images/lifeEvent/8.png" alt="8 image" />
+                        <img src="./images/lifeEvent/9.png" alt="9 image" />
+                        <img src="./images/lifeEvent/10.png" alt="10 image" />
+                    </div>
+                </section>
+
+                <!-- premiere section -->
+                <section class="premiere">
+                    <img
+                        src="./images/premiere/1image.png"
+                        alt="premiere image"
+                    />
+                    <div class="inner">
+                        <h2>Premieres</h2>
+                        <p>Brand new release every friday</p>
+                        <div class="movie-cards">
+                            <!-- Movie Card 1 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/8.png" />
+                                </div>
+
+                                <h3>Speak No Evil</h3>
+                                <h3>English</h3>
+                            </div>
+
+                            <!-- Movie Card 2 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/3.png" />
+                                </div>
+
+                                <h3>The Line (2023)</h3>
+                                <h3>English</h3>
+                            </div>
+
+                            <!-- Movie Card 3 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/4.png" />
+                                </div>
+
+                                <h3>Yolo</h3>
+                                <h3>English</h3>
+                            </div>
+
+                            <!-- Movie Card 4 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/5.png" />
+                                </div>
+
+                                <h3>Judwaa 2</h3>
+                                <h3>Hindi</h3>
+                            </div>
+
+                            <!-- Movie Card 5 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/6.png" />
+                                </div>
+
+                                <h3>Ab Toh Sab Bhagwan Bharose</h3>
+                                <h3>Hindi</h3>
+                            </div>
+                            <!-- Movie Card 6 -->
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/7.png" />
+                                </div>
+
+                                <h3>Strange Darling</h3>
+                                <h3>English</h3>
+                            </div>
+                            <!-- Movie Card 7 -->
+
+                            <div class="movie-card">
+                                <div class="movie-poster">
+                                    <img src="./images/premiere/2.png" />
+                                </div>
+
+                                <h3>The Great Escaper</h3>
+                                <h3>English</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Music Studio -->
+                <section class="recommended-movies">
+                    <div class="section-header">
+                        <h2>Your Music Studio</h2>
+                        <a href="#" class="see-all">See All &gt;</a>
+                    </div>
+                    <div class="movie-cards">
+                        <!-- Movie Card 1 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/1.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                                <span class="badge">PROMOTED</span>
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Bismil Ki Mehfil - Live in Delhi - 9 Nov
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                KD Jadhav Indoor Hall: Delhi Concerts
+                            </p>
+                        </div>
+
+                        <!-- Movie Card 2 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/2.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                                <span class="badge">PROMOTED</span>
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Defected Showcase India - Delhi NCR
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                The Kai Room: Gurugram Concerts
+                            </p>
+                        </div>
+
+                        <!-- Movie Card 3 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/3.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Prateek Kuhad Silhouettes Tour - Gurgaon
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                Airia Mall: Gurugram Concerts
+                            </p>
+                        </div>
+
+                        <!-- Movie Card 4 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/4.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Sunburn Arena Ft. Boris Brejcha
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                Huda Gymkhana Club: Gurgaon Concerts
+                            </p>
+                        </div>
+
+                        <!-- Movie Card 5 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/5.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Sunburn Arena Ft. Charlotte de Witte
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                Huda Gymkhana Club: Gurgaon Concerts
+                            </p>
+                        </div>
+                        <!-- Movie Card 6 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/6.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                            </div>
+
+                            <h3 style="text-align: left">
+                                Piyush Mishra - UdanKhatola Tour
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                Venue To Be Announced: Gurugram Concerts
+                            </p>
+                        </div>
+                        <!-- Movie Card 7 -->
+                        <div class="movie-card">
+                            <div class="movie-poster">
+                                <img
+                                    src="./images/musicStudio/7.png"
+                                    alt="Venom: The Last Dance"
+                                />
+                            </div>
+
+                            <h3 style="text-align: left">
+                                TRIBUTE TO COLDPLAY
+                            </h3>
+                            <p
+                                style="
+                                    text-align: left;
+                                    color: gray;
+                                    font-size: 1rem;
+                                "
+                            >
+                                Venue To Be Announced: Delhi (NCR) Club Gigs
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trending Search -->
+                <section class="trending">
+                    <h2>Trending Searches Right Now</h2>
+                    <div class="searches">
+                        <li>Maroon 5 India 2024 - Information Page</li>
+                        <li>Venom: The Last Dance</li>
+                        <li>Bhool Bhulaiyaa 3</li>
+                        <li>Amaran</li>
+                        <li>Karan Aujla - It Was All A Dream (Delhi NCR)</li>
+                        <li>Ajab Prem Ki Ghazab Kahani</li>
+                        <li>smile 2</li>
+                        <li>Singham Again</li>
+                        <li>Tabaah</li>
+                        <li>Ramayana: The Legend of Prince Rama</li>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <div class="contact">
+                    <div class="contact-left-side">
+                        <p>🏢 List Your Show</p>
+                        <p>
+                            Got a show, event, activity or a great experience?
+                            Partner with us & get listed on BookMyShow
+                        </p>
+                    </div>
+                    <div class="contact-right-side">
+                        <button class="signin contact-btn">
+                            Contact Today!
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <img src="./images/bookmyshow.png" alt="logo" height="50px" />
+            <br />
+            <ul>
+                <li>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="64"
+                        height="64"
+                        shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision"
+                        image-rendering="optimizeQuality"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        viewBox="0 0 640 640"
+                    >
+                        <path
+                            d="M640.012 121.513c-23.528 10.524-48.875 17.516-75.343 20.634 27.118-16.24 47.858-41.977 57.756-72.615-25.347 14.988-53.516 25.985-83.363 31.866-24-25.5-58.087-41.35-95.848-41.35-72.508 0-131.21 58.736-131.21 131.198 0 10.228 1.134 20.232 3.355 29.882-109.1-5.528-205.821-57.757-270.57-137.222a131.423 131.423 0 0 0-17.764 66c0 45.497 23.102 85.738 58.347 109.207-21.508-.638-41.74-6.638-59.505-16.359v1.642c0 63.627 45.225 116.718 105.32 128.718-11.008 2.988-22.63 4.642-34.606 4.642-8.48 0-16.654-.874-24.78-2.35 16.783 52.11 65.233 90.095 122.612 91.205-44.989 35.245-101.493 56.233-163.09 56.233-10.63 0-20.988-.65-31.334-1.89 58.229 37.359 127.206 58.997 201.31 58.997 241.42 0 373.552-200.069 373.552-373.54 0-5.764-.13-11.35-.366-16.996 25.642-18.343 47.87-41.493 65.469-67.844l.059-.059z"
+                        />
+                    </svg>
+                </li>
+                <li>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="64"
+                        height="64"
+                        shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision"
+                        image-rendering="optimizeQuality"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        viewBox="0 0 640 640"
+                    >
+                        <path
+                            d="M633.468 192.038s-6.248-44.115-25.477-63.485c-24.366-25.477-51.65-25.642-64.123-27.118-89.493-6.52-223.904-6.52-223.904-6.52h-.236s-134.352 0-223.893 6.52c-12.52 1.523-39.768 1.63-64.123 27.118-19.24 19.37-25.358 63.485-25.358 63.485S-.012 243.806-.012 295.681v48.509c0 51.768 6.366 103.643 6.366 103.643s6.248 44.114 25.358 63.52c24.355 25.477 56.363 24.65 70.655 27.367 51.237 4.89 217.644 6.366 217.644 6.366s134.529-.237 224.022-6.638c12.52-1.477 39.756-1.63 64.123-27.119 19.24-19.37 25.476-63.532 25.476-63.532S640 396.03 640 344.154v-48.508c-.13-51.769-6.497-103.643-6.497-103.643l-.035.035zm-379.8 211.007V223.173L426.56 313.41l-172.892 89.635z"
+                        />
+                    </svg>
+                </li>
+                <li>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision"
+                        image-rendering="optimizeQuality"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M256 0c141.385 0 256 114.615 256 256S397.385 512 256 512 0 397.385 0 256 114.615 0 256 0zm104.932 160.621a250.428 250.428 0 00-62.383-19.182 173.883 173.883 0 00-7.966 16.243 232.557 232.557 0 00-34.619-2.603c-11.569 0-23.195.879-34.622 2.58-2.334-5.509-5.044-10.971-7.986-16.223a252.58 252.58 0 00-62.397 19.222c-39.483 58.408-50.183 115.357-44.833 171.497a251.49 251.49 0 0076.502 38.398c6.169-8.327 11.695-17.192 16.386-26.417a161.682 161.682 0 01-25.813-12.319c2.164-1.569 4.281-3.186 6.325-4.756 23.912 11.231 50.039 17.088 76.473 17.088 26.436 0 52.562-5.857 76.475-17.089 2.069 1.688 4.186 3.305 6.325 4.755a162.693 162.693 0 01-25.86 12.352 183.969 183.969 0 0016.387 26.397 250.498 250.498 0 0076.553-38.392l-.006.007c6.277-65.104-10.725-121.53-44.941-171.558zM205.78 297.63c-14.908 0-27.226-13.53-27.226-30.175 0-16.645 11.889-30.293 27.178-30.293 15.29 0 27.511 13.648 27.25 30.293-.262 16.645-12.008 30.175-27.202 30.175zm100.439 0c-14.933 0-27.202-13.53-27.202-30.175 0-16.645 11.889-30.293 27.202-30.293 15.313 0 27.44 13.648 27.178 30.293-.261 16.645-11.984 30.175-27.178 30.175z"
+                        />
+                    </svg>
+                </li>
+                <li>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision"
+                        image-rendering="optimizeQuality"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        viewBox="0 0 510 512.459"
+                    >
+                        <path
+                            fill="#111B21"
+                            d="M435.689 74.468C387.754 26.471 324 .025 256.071 0 116.098 0 2.18 113.906 2.131 253.916c-.024 44.758 11.677 88.445 33.898 126.946L0 512.459l134.617-35.311c37.087 20.238 78.85 30.891 121.345 30.903h.109c139.949 0 253.88-113.917 253.928-253.928.024-67.855-26.361-131.645-74.31-179.643v-.012zm-179.618 390.7h-.085c-37.868-.011-75.016-10.192-107.428-29.417l-7.707-4.577-79.886 20.953 21.32-77.889-5.017-7.987c-21.125-33.605-32.29-72.447-32.266-112.322.049-116.366 94.729-211.046 211.155-211.046 56.373.025 109.364 22.003 149.214 61.903 39.853 39.888 61.781 92.927 61.757 149.313-.05 116.377-94.728 211.058-211.057 211.058v.011zm115.768-158.067c-6.344-3.178-37.537-18.52-43.358-20.639-5.82-2.119-10.044-3.177-14.27 3.178-4.225 6.357-16.388 20.651-20.09 24.875-3.702 4.238-7.403 4.762-13.747 1.583-6.343-3.178-26.787-9.874-51.029-31.487-18.86-16.827-31.597-37.598-35.297-43.955-3.702-6.355-.39-9.789 2.775-12.943 2.849-2.848 6.344-7.414 9.522-11.116s4.225-6.355 6.343-10.581c2.12-4.238 1.06-7.937-.522-11.117-1.584-3.177-14.271-34.409-19.568-47.108-5.151-12.37-10.385-10.69-14.269-10.897-3.703-.183-7.927-.219-12.164-.219s-11.105 1.582-16.925 7.939c-5.82 6.354-22.209 21.709-22.209 52.927 0 31.22 22.733 61.405 25.911 65.642 3.177 4.237 44.745 68.318 108.389 95.812 15.135 6.538 26.957 10.446 36.175 13.368 15.196 4.834 29.027 4.153 39.96 2.52 12.19-1.825 37.54-15.353 42.824-30.172 5.283-14.818 5.283-27.529 3.701-30.172-1.582-2.641-5.819-4.237-12.163-7.414l.011-.024z"
+                        />
+                    </svg>
+                </li>
+            </ul>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/js/splide.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
